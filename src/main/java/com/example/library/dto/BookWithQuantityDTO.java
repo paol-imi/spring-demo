@@ -4,7 +4,6 @@ import com.example.library.validator.ISBN;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.springframework.beans.factory.annotation.Value;
 
 /**
  * A DTO representing a book with a quantity.
