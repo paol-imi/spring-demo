@@ -12,7 +12,10 @@ import java.util.Set;
  * A location where books are stored.
  */
 @Entity
-@Table(name = "locations")
+@Table(name = "locations", indexes = {
+		// Index to allow searching for books by title.
+		@Index(name = "idx_location_name", columnList = "name"),
+})
 public class Location {
 	/**
 	 * The book copies stored at the location.

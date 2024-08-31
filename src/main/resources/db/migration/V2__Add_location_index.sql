@@ -1,0 +1,1 @@
+CREATE INDEX idx_location_name ON locations (name);
