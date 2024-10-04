@@ -77,8 +77,8 @@ class BookCopyRepositoryTest {
 		@Test
 		@DisplayName("Find book quantity by location and book")
 		void whenFindBookQuantityByLocationIdAndBookId_thenReturnQuantity() {
-			Integer quantity = bookCopyRepository.findBookQuantityByLocationIdAndBookId(
-					testLocation.getId(), testBook.getId());
+			Integer quantity = bookCopyRepository.getByLocationIdAndBookId(
+					testLocation.getId(), testBook.getId()).getQuantity();
 
 			assertThat(quantity).isEqualTo(5);
 		}

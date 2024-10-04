@@ -44,7 +44,7 @@ class BookServiceTest {
 	@BeforeEach
 	void setUp() {
 		modelMapper = new ModelMapper();
-		bookService = new BookServiceImpl(bookRepository, modelMapper);
+		bookService = new BookService(bookRepository, modelMapper);
 
 		testBook = new Book(1L, "Test Book", "Test Author", "1234567890", LocalDate.of(2023, 1, 1));
 		testBookDTO = modelMapper.map(testBook, BookDTO.class);

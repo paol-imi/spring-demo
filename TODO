@@ -1,0 +1,18 @@
+1) test mapstruct: updates and audit fields, especially on creation if they are generated
+2)
+
+Test Coverage: There's a notable lack of unit and integration tests. Enterprise applications require comprehensive test suites.
+Configuration Management: Consider externalizing more configuration properties and using Spring Cloud Config for centralized configuration management.
+Caching: No caching strategy is implemented, which could improve performance for frequently accessed data.
+API Versioning: No clear API versioning strategy is visible, which is crucial for maintaining backward compatibility.
+Rate Limiting: No implementation of rate limiting to protect against abuse.
+Audit Logging: No audit logging for tracking important operations and changes.
+Internationalization: No support for multiple languages, which might be necessary for a global enterprise application.
+HATEOAS: The API doesn't implement HATEOAS, which can improve discoverability and self-documentation of the API.
+Circuit Breaker: No implementation of circuit breakers for fault tolerance.
+Containerization: No Dockerfile or container configuration is present, which is often expected in modern enterprise applications.
+CI/CD: No visible continuous integration or deployment configuration.
+Code Duplication: Some code duplication exists in the controller classes, which could be refactored into a base controller.
+Performance Monitoring: While there are some custom metrics, a more comprehensive APM solution could be beneficial.
+Security Hardening: Consider implementing more security features like CSRF protection, security headers, etc.
+Data Validation: While there's basic validation, consider more comprehensive input sanitization and validation.

@@ -43,7 +43,7 @@ class LocationServiceTest {
 	@BeforeEach
 	void setUp() {
 		modelMapper = new ModelMapper();
-		locationService = new LocationServiceImpl(locationRepository, modelMapper);
+		locationService = new LocationService(locationRepository, modelMapper);
 
 		testLocation = new Location(1L, "Test Location", "Test Address");
 		testLocationDTO = modelMapper.map(testLocation, LocationDTO.class);

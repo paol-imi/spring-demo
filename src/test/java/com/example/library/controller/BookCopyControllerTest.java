@@ -2,8 +2,6 @@ package com.example.library.controller;
 
 import com.example.library.dto.BookWithQuantityDTO;
 import com.example.library.service.BookCopyService;
-import com.example.library.service.BookService;
-import com.example.library.service.LocationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

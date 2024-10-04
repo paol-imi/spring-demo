@@ -1,0 +1,4 @@
+# Name of the application
+spring:
+  profiles:
+    active: test

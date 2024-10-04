@@ -48,7 +48,7 @@ class BookCopyServiceTest {
 
 	@BeforeEach
 	void setUp() {
-		bookCopyService = new BookCopyServiceImpl(bookCopyRepository, locationRepository, bookRepository);
+		bookCopyService = new BookCopyService(bookCopyRepository, locationRepository, bookRepository);
 
 		testBook = new Book(1L, "Test Book", "Test Author", "1234567890", LocalDate.of(2023, 1, 1));
 		testLocation = new Location(1L, "Test Location", "Test Address");
@@ -112,14 +112,14 @@ class BookCopyServiceTest {
 		void shouldReturnQuantityWhenBookCopyExists() throws Exception {
 			when(locationRepository.existsById(1L)).thenReturn(true);
 			when(bookRepository.existsById(1L)).thenReturn(true);
-			when(bookCopyRepository.findBookQuantityByLocationIdAndBookId(1L, 1L)).thenReturn(5);
+			when(bookCopyRepository.getByLocationIdAndBookId(1L, 1L)).thenReturn(new BookCopy(testBook, testLocation, 5));
 
 			Integer result = bookCopyService.getBookCopyQuantity(1L, 1L);
 
 			assertThat(result).isEqualTo(5);
 			verify(locationRepository).existsById(1L);
 			verify(bookRepository).existsById(1L);
-			verify(bookCopyRepository).findBookQuantityByLocationIdAndBookId(1L, 1L);
+			verify(bookCopyRepository).getByLocationIdAndBookId(1L, 1L);
 		}
 
 		@Test

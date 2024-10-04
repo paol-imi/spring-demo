@@ -13,23 +13,23 @@ import java.lang.annotation.*;
 @Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ISBN {
-	String message() default "ISBN is not valid";
+    String message() default "{com.example.library.validator.ISBN.message}";
 
-	Class<?>[] groups() default {};
+    Class<?>[] groups() default {};
 
-	Class<? extends Payload>[] payload() default {};
+    Class<? extends Payload>[] payload() default {};
 
-	/**
-	 * The type of ISBN to validate, default is ANY.
-	 */
-	Type type() default Type.ANY;
+    /**
+     * The type of ISBN to validate, default is ANY.
+     */
+    Type type() default Type.ANY;
 
-	/**
-	 * The type of ISBN to validate.
-	 */
-	enum Type {
-		ISBN_10,
-		ISBN_13,
-		ANY
-	}
+    /**
+     * The type of ISBN to validate.
+     */
+    enum Type {
+        ISBN_10,
+        ISBN_13,
+        ANY
+    }
 }

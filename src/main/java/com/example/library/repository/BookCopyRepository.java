@@ -2,6 +2,7 @@ package com.example.library.repository;
 
 import com.example.library.dto.BookWithQuantityDTO;
 import com.example.library.entity.BookCopy;
+import jakarta.annotation.Nullable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,8 +23,7 @@ public interface BookCopyRepository extends JpaRepository<BookCopy, BookCopy.Boo
 	 * @param bookId     the id of the book
 	 * @return the quantity of the book at the location
 	 */
-	@Query("SELECT bc.quantity FROM BookCopy bc WHERE bc.id.locationId = :locationId AND bc.id.bookId = :bookId")
-	Integer findBookQuantityByLocationIdAndBookId(@Param("locationId") Long locationId, @Param("bookId") Long bookId);
+	BookCopy getByLocationIdAndBookId(@Param("locationId") Long locationId, @Param("bookId") Long bookId);
 
 	/**
 	 * Find the books with quantities at a location.
